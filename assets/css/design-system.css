@@ -1,0 +1,99 @@
+/* ------------------------------------ */
+/* 1. Design System e Reset */
+/* ------------------------------------ */
+
+/* Reset Básico (Melhorado para incluir o box-sizing) */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height:1.6; /* Aumentado para melhor leitura */
+    color:var(--text-primary);
+    background:var(--bg-light);
+    margin:0;
+    min-height:100vh;
+}
+
+/* 2. Variáveis CSS Customizadas (:root) */
+:root {
+    /* Cores - Paleta com 8+ cores */
+    --color-primary: #0B6EF6;      /* Azul principal (para botões, links) */
+    --color-primary-dark: #0056b3; /* Azul mais escuro (hover) */
+    --color-secondary: #28a745;    /* Verde (Sucesso, adoção) */
+    --color-accent: #ffc107;       /* Amarelo (Destaque, alerta) */
+    --color-neutral-dark: #343a40; /* Cinza escuro (Texto principal) */
+    --color-neutral-light: #f5f7fb; /* Cinza claro (Backgrounds, headers) */
+    --color-error: #dc3545;        /* Vermelho (Erros, alertas) */
+    --color-white: #ffffff;        /* Branco */
+
+    /* Variáveis de Texto/Fundo */
+    --bg-light: var(--color-white);
+    --text-primary: var(--color-neutral-dark);
+    --link-color: var(--color-primary);
+
+    /* Espaçamento Modular (Múltiplos de 8px) */
+    --spacing-xs: 4px;   /* 4px (Opcional) */
+    --spacing-s: 8px;    /* 8px */
+    --spacing-m: 16px;   /* 16px */
+    --spacing-l: 24px;   /* 24px */
+    --spacing-xl: 32px;  /* 32px */
+    --spacing-xxl: 48px; /* 48px */
+    --spacing-xxxl: 64px;/* 64px */
+
+    /* Tipografia (5+ tamanhos) */
+    --font-size-base: 1rem;       /* 16px padrão */
+    --font-size-sm: 0.875rem;    /* Texto pequeno */
+    --font-size-lg: 1.25rem;     /* Texto grande */
+    --font-size-h1: 2.5rem;      /* H1 (40px) */
+    --font-size-h2: 2rem;        /* H2 (32px) */
+    --font-size-h3: 1.75rem;     /* H3 (28px) */
+    --font-size-h4: 1.5rem;      /* H4 (24px) */
+    
+    /* Outros */
+    --border-radius: 6px;
+    --max-width: 1200px;
+}
+
+/* 3. Estilização da Tipografia Hierárquica */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--spacing-l);
+    margin-bottom: var(--spacing-m);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+p { margin-bottom: var(--spacing-m); }
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover, a:focus {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+/* ------------------------------------ */
+/* 1.5. Modo Escuro e Alto Contraste (WCAG) */
+/* ------------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+    /* Troca de variáveis para o Modo Escuro */
+    :root {
+        --bg: #121212;
+        --bg-light: #1e1e1e;
+        --text-primary: #f0f0f0;
+        --text-secondary: #cccccc;
+        --color-white: #121212; /* Invertido para Alto Contraste */
+        
+        /* Cores primárias e secundárias podem precisar de ajuste para manter o contraste */
+        --color-primary: #4a90e2; /* Azul um pouco mais claro */
+        --color-secondary: #66bb6a; /* Verde um pouco mais claro */
+    }
+}

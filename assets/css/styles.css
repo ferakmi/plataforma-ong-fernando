@@ -1,0 +1,8 @@
+/* ------------------------------------ */
+/* styles.css - Ponto de entrada modular */
+/* ------------------------------------ */
+
+@import url("design-system.css");
+@import url("layout.css");
+@import url("navigation.css");
+@import url("components.css");
