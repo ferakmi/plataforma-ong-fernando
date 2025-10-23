@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------------------------------------ */
 /* 2. Layout, Grid e Responsividade */
 /* ------------------------------------ */
@@ -99,4 +100,88 @@
         align-items: center;
         text-align: left;
     }
+=======
+/* ------------------------------------ */
+/* 2. Layout, Grid e Responsividade */
+/* ------------------------------------ */
+
+/* Breakpoints (Mínimo 5, definidos comumente para Mobile, Tablet, Desktop) */
+/* Usaremos 4 para simplificar, mas você pode adicionar mais (ex: 992px) */
+/* Mobile First é a abordagem inicial (estilos base) */
+:root {
+    --bp-sm: 576px;  /* Pequenos tablets/landscape phones */
+    --bp-md: 768px;  /* Tablets */
+    --bp-lg: 1024px; /* Desktops pequenos */
+    --bp-xl: 1200px; /* Desktops grandes */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-m); /* 16px */
+}
+
+/* Centraliza o container para telas maiores */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--max-width); /* 1200px */
+    }
+}
+
+/* 12-Colunas CSS Grid Customizado para seções internas (Exemplo) */
+.grid-12-cols {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna no mobile */
+    gap: var(--spacing-l);
+}
+
+@media (min-width: 768px) {
+    .grid-12-cols {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+    /* CORREÇÃO APLICADA AQUI: Garante que o título ocupe as 12 colunas */
+    .grid-12-cols > h2 {
+        grid-column: 1 / -1; /* Começa na linha 1 e termina na última linha (-1) */
+        margin-bottom: var(--spacing-xl); /* Adiciona um espaçamento maior após o título */
+    }
+    
+    /* Estilos de layout específico: Ex: Missão/Visão/Valores (3 colunas) */
+    .about article {
+        grid-column: span 4; /* Cada artigo ocupa 4 colunas em telas maiores (4+4+4 = 12) */
+    }
+}
+
+/* Exemplo de Flexbox para o Header */
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Layout do Footer */
+.site-footer .container {
+    display: flex;
+    flex-direction: column; /* Colunas no mobile */
+    gap: var(--spacing-m);
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .site-footer .container {
+        flex-direction: row; /* Linhas no desktop */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+>>>>>>> 2417fa6cb80252ecfd26d09fd222cda2e7087045
 }

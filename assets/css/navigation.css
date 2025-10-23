@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------------------------------------ */
 /* 3. Navegação (Header e Menu) */
 /* ------------------------------------ */
@@ -57,4 +58,65 @@
         flex-direction: column; /* Empilha os links */
         gap: var(--spacing-s);
     }
+=======
+/* ------------------------------------ */
+/* 3. Navegação (Header e Menu) */
+/* ------------------------------------ */
+
+.site-header {
+    background: var(--color-neutral-light);
+    border-bottom: 1px solid #e6e9ef;
+    padding: var(--spacing-s) 0;
+}
+
+/* Logo */
+.brand .logo {
+    height: 48px;
+    transition: transform 0.3s;
+}
+.brand .logo:hover {
+    transform: scale(1.05);
+}
+
+/* Menu Principal (Main Navigation) */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing-m); /* 16px */
+}
+.main-nav a {
+    padding: var(--spacing-xs) var(--spacing-s); /* 4px 8px */
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: background 0.3s;
+}
+.main-nav a:hover, .main-nav a:focus {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+/* --- Implementação Menu Hambúrguer (Mobile) --- */
+
+/* Por padrão, o menu mobile não estará visível. Para simplificar no HTML puro, 
+   vamos manter o Flexbox padrão do menu para desktop, mas nas próximas etapas com JS,
+   você implementará o ícone de hambúrguer e a lógica de toggle. */
+
+/* Ajustes para mobile (onde o .container do header usa flex-direction: row) */
+/* Se a navegação for muito longa, podemos empilhá-la no mobile: */
+@media (max-width: 767px) {
+    .site-header .container {
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    }
+    .main-nav {
+        width: 100%;
+        margin-top: var(--spacing-s);
+    }
+    .main-nav ul {
+        flex-direction: column; /* Empilha os links */
+        gap: var(--spacing-s);
+    }
+>>>>>>> 2417fa6cb80252ecfd26d09fd222cda2e7087045
 }

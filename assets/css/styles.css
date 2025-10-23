@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------------------------------------ */
 /* styles.css - Ponto de entrada modular */
 /* ------------------------------------ */
@@ -5,4 +6,13 @@
 @import url("design-system.css");
 @import url("layout.css");
 @import url("navigation.css");
+=======
+/* ------------------------------------ */
+/* styles.css - Ponto de entrada modular */
+/* ------------------------------------ */
+
+@import url("design-system.css");
+@import url("layout.css");
+@import url("navigation.css");
+>>>>>>> 2417fa6cb80252ecfd26d09fd222cda2e7087045
 @import url("components.css");

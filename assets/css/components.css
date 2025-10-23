@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------------------------------------ */
 /* 4. Componentes Reutilizáveis */
 /* ------------------------------------ */
@@ -178,4 +179,186 @@ textarea:focus.is-invalid {
     padding-left: 10px;
     white-space: nowrap; /* Impede que o texto quebre */
     transition: width 0.5s ease-out;
+=======
+/* ------------------------------------ */
+/* 4. Componentes Reutilizáveis */
+/* ------------------------------------ */
+
+/* Botões com Estados Visuais */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-s) var(--spacing-l); /* 8px 24px */
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border: 1px solid var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    text-align: center;
+}
+
+.btn:hover, .btn:focus {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    background: #004499;
+    border-color: #004499;
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    background: #cccccc;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Cards de Projeto Responsivos */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo com auto-fit */
+    gap: var(--spacing-l);
+    margin-top: var(--spacing-xl);
+}
+
+.project-card {
+    border: 1px solid #e6e9ef;
+    padding: var(--spacing-l);
+    border-radius: var(--border-radius);
+    background: var(--bg-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-m);
+}
+
+/* Formulários Estilizados */
+form fieldset {
+    border: 1px solid #cccccc;
+    padding: var(--spacing-l);
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--border-radius);
+}
+
+form legend {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: 0 var(--spacing-s);
+}
+
+label {
+    display: block;
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+/* Estilo padrão para todos os campos de input, select e textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"], /* Adicionado caso precise futuramente */
+select,
+textarea {
+    width: 100%;
+    padding: var(--spacing-s);
+    border: 1px solid #cccccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Foco (Focus) para melhor acessibilidade */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(11, 110, 246, 0.25); /* Sombra azul para o foco */
+}
+
+
+/* ------------------------------------ */
+/* ESTILOS DE VALIDAÇÃO (Requisito JS) */
+/* ------------------------------------ */
+
+/* Regras de erro mais específicas para sobrepor o estilo padrão */
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: var(--color-error); /* Cor da variável de erro */
+    border-width: 2px; /* Destaque visual: engrossa a borda */
+    padding: calc(var(--spacing-s) - 1px); /* Ajusta padding por causa da borda de 2px */
+}
+
+/* Regras de sucesso para feedback positivo */
+input.is-valid,
+select.is-valid,
+textarea.is-valid {
+    border-color: var(--color-secondary); /* Cor da variável de sucesso (verde) */
+}
+
+/* Box-shadow ao focar em um campo inválido */
+input:focus.is-invalid,
+select:focus.is-invalid,
+textarea:focus.is-invalid {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); /* Sombra vermelha ao focar */
+}
+
+/* Mensagem de Feedback (Texto do Erro) */
+.feedback-message {
+    font-size: var(--font-size-sm);
+    margin-top: 4px; /* 4px */
+    padding: 2px 0;
+    font-weight: 500;
+    display: block; /* Garante que a mensagem ocupe sua própria linha */
+}
+
+.feedback-message.error {
+    color: var(--color-error); /* Cor da variável de erro */
+}
+
+/* Componente Progress Bar (para Doação em projetos.html) */
+.donation .progress {
+    background-color: #e9ecef;
+    border-radius: var(--border-radius);
+    height: 30px;
+    margin: var(--spacing-m) 0;
+    line-height: 30px;
+    text-align: center;
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+/* Estilo para simular o preenchimento (valor 40% em projetos.html) */
+.donation .progress::before {
+    content: "Meta: " attr(aria-valuenow) "% atingida"; /* Texto de feedback */
+    display: block;
+    width: 40%; /* Valor do aria-valuenow="40" */
+    background-color: var(--color-secondary);
+    height: 100%;
+    border-radius: var(--border-radius);
+    color: var(--color-white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding-left: 10px;
+    white-space: nowrap; /* Impede que o texto quebre */
+    transition: width 0.5s ease-out;
+>>>>>>> 2417fa6cb80252ecfd26d09fd222cda2e7087045
 }
