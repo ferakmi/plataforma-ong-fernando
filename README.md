@@ -1,4 +1,44 @@
-📄 Projeto Mizu: Transformando Vidas através da Tecnologia🌟 Visão Geral do ProjetoO Projeto Mizu é um projeto de aplicação web estática e interativa desenvolvido para simular a plataforma digital de uma Organização Não Governamental (ONG) fictícia, focada em educação e apoio social.O objetivo principal deste projeto foi aplicar conhecimentos de desenvolvimento Front-end para criar uma interface acessível, responsiva e com recursos de interatividade avançada (JavaScript).StatusVersãoLicençaConcluídov1.0.0MIT (Exemplo)🛠️ Tecnologias UtilizadasO projeto foi construído utilizando o stack fundamental do desenvolvimento web:HTML5: Estrutura semântica e acessível.CSS3: Estilização responsiva, layout modular (BEM/SMACSS adaptado) e variáveis CSS.JavaScript ES6+: Funcionalidades interativas, manipulação do DOM e módulos.🚀 Funcionalidades ImplementadasA plataforma atende a diferentes públicos-alvo (assistidos, voluntários e doadores) com as seguintes funcionalidades:I. Estrutura e Layout (Entrega 1 & 2)Design System Básico: Uso de variáveis CSS para cores, tipografia e espaçamento (_variables.css).Layout Responsivo: Otimizado para visualização em dispositivos móveis, tablets e desktops (Mobile-First approach).Componentes Modulares: Estilização isolada para botões (_buttons.css), cards (_cards.css) e navegação.II. Interatividade (Entrega 3)Navegação Dinâmica (Menu Mobile): Implementação de um menu hambúrguer controlado por JavaScript (js/modules/menu.js) para a navegação em telas menores.Validação Avançada de Formulário:Máscaras de Input: Aplicação de máscaras em tempo real para CPF, Telefone e CEP (js/modules/forms.js), melhorando a experiência do usuário.Verificação de Consistência: Validação customizada no campo CPF para padrões de dados incorretos, oferecendo feedback direto ao usuário.Template Rendering (SPA Básico): Carregamento dinâmico dos cards de projetos a partir de dados em JavaScript (js/templates/projects-data.js), simulando uma Single Page Application.III. Práticas Profissionais (Entrega 4)Acessibilidade WCAG 2.1 Nível AA (Detalhes na seção abaixo).Otimização para Produção (Minificação e Compressão).Controle de Versão (GitFlow e Commits Semânticos).♿ Acessibilidade (WCAG 2.1 Nível AA)A acessibilidade foi um pilar fundamental no desenvolvimento. Foram implementadas as seguintes práticas para garantir conformidade com a WCAG 2.1 Nível AA:RequisitoImplementação no ProjetoEstrutura SemânticaUso correto de tags como <header>, <nav>, <main>, <section>, <h1> e <footer>.Navegação por TecladoO estilo outline: 2px solid var(--color-primary-dark); foi mantido e reforçado no :focus de todos os elementos interativos (<button>, <a>, <input>).Contraste Mínimo (4.5:1)Todas as combinações de cores de texto foram verificadas para garantir o contraste mínimo exigido, conforme definido em _variables.css.Suporte a Leitores de TelaUso de atributos alt em todas as imagens e de associações <label for="..."> para os campos de formulário, garantindo leitura correta.Modo Escuro AcessívelImplementação de um tema de alto contraste/modo escuro via @media (prefers-color-scheme: dark) { ... } no CSS, ajustando as variáveis de cor.🔗 Como Rodar o Projeto LocalmenteSiga estas etapas para ter uma cópia do projeto em sua máquina:Clone o Repositório:Bashgit clone https://github.com/ferakmi/plataforma-ong-fernando.git
-Acesse a Pasta:Bashcd plataforma-ong-fernando
-Inicie o Servidor: Abra a pasta no VS Code e use a extensão Live Server para abrir o arquivo index.html. Alternativamente, basta abrir o index.html diretamente no seu navegador.🟢 Controle de Versão e ContribuiçãoO projeto seguiu a metodologia GitFlow básica (branches main e develop) e utilizou Commits Semânticos para manter o histórico claro e organizado.Estratégia de Branchesmain: Contém apenas código estável de produção (releases).develop: Branch de integração onde todas as funcionalidades são testadas antes de serem mescladas para main.feat/* / fix/*: Branches temporárias para desenvolvimento de novas funcionalidades ou correções de bugs.Versionamento SemânticoA primeira versão finalizada do projeto foi marcada com uma tag de release:Bashgit tag v1.0.0
-Exemplo de Commits Semânticosfeat: Adiciona módulos JS de forms e menufix: Corrige caminho de importação CSS quebrava em algumas plataformasstyle: Ajusta padding e margin de elementos no mobiledocs: Adiciona e estrutura o README.md completo para Entrega 4🧑‍💻 AutorFernando AkiraGitHub: ferakmi© 2025 Projeto Mizu. Desenvolvido por Fernando Akira para fins acadêmicos.
+Projeto Mizu: Plataforma Web de ONG
+Visão Geral
+O Projeto Mizu é uma aplicação Front-end que simula a plataforma digital de uma ONG, focada na aplicação de conceitos de HTML, CSS, JavaScript e práticas profissionais de desenvolvimento.
+
+O projeto foi construído para demonstrar responsividade, interatividade (JS) e conformidade com padrões de acessibilidade.
+
+Funcionalidades Implementadas
+O projeto foi desenvolvido em 4 etapas, cobrindo os seguintes aspectos:
+
+Estrutura e Design: Layout responsivo (Mobile-First), sistema de cores com variáveis CSS, e componentes básicos (botões, cards).
+
+Navegação Interativa: Implementação de menu hambúrguer controlado por JavaScript para dispositivos móveis.
+
+Formulários Avançados: Uso de máscaras de input (CPF, Telefone, CEP) e validação de consistência de dados (aviso ao usuário sobre preenchimento incorreto).
+
+Sistema de Templates: Carregamento dinâmico de conteúdo na página de projetos (simulação de SPA).
+
+Acessibilidade (WCAG 2.1 Nível AA)
+A acessibilidade foi implementada para garantir a conformidade:
+
+Semântica: Uso correto de tags (<main>, <nav>, <button>), facilitando a navegação por leitores de tela.
+
+Foco Visual: Contornos (outlines) visíveis em :focus para navegação completa via teclado.
+
+Contraste: Todas as cores de texto atendem ao contraste mínimo de 4.5:1.
+
+Modo Escuro: Implementação de um tema de alto contraste (Modo Escuro) utilizando media query prefers-color-scheme.
+
+Práticas Profissionais (Git/GitHub)
+O controle de versão foi gerenciado com práticas profissionais:
+
+Estratégia GitFlow: Utilização de branches main (produção) e develop (desenvolvimento).
+
+Commits Semânticos: Histórico de commits organizado e legível (ex: feat:, fix:, docs:, style:).
+
+Releases: Criação de tag v1.0.0 para marcar a versão final do projeto.
+
+Otimização: Minificação manual dos arquivos CSS e JavaScript para simulação de ambiente de produção.
+
+
+🧑‍💻 Autor
+Fernando Akira
+
+GitHub: ferakmi
