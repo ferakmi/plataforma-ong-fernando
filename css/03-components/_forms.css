@@ -1,0 +1,86 @@
+/* ---------------------------------------------------- */
+/* 03-COMPONENTS / _forms.css - ESTILIZAÇÃO DE FORMULÁRIOS */
+/* ---------------------------------------------------- */
+
+form {
+    max-width: 600px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg);
+    background-color: var(--color-neutral-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius);
+}
+
+legend {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+    padding: 0 var(--spacing-xs);
+}
+
+form p {
+    margin-bottom: var(--spacing-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-regular);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: var(--spacing-xs);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed);
+}
+
+input:focus,
+select:focus {
+    border-color: var(--color-primary-base);
+    outline: none; /* Remove o outline padrão do navegador */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Efeito de foco */
+}
+
+/* ================================================= */
+/* VALIDAÇÃO VISUAL NATIVA (HTML5) */
+/* ================================================= */
+
+/* Quando o campo é obrigatório (required) e o usuário ainda não tocou nele, ou está vazio */ 
+    /* Por padrão, não faremos nada agressivo, exceto o padrão do navegador */
+input:not(:focus):invalid:not(:placeholder-shown),
+select:not(:focus):invalid:not(:placeholder-shown) {
+    border-color: var(--color-feedback-error); /* Borda vermelha para erro */
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Quando o campo é válido */
+input:not(:focus):valid:not(:placeholder-shown),
+select:not(:focus):valid:not(:placeholder-shown) {
+    border-color: var(--color-feedback-success); /* Borda verde para sucesso */
+}
+
+/* Botões do formulário */
+form button[type="submit"] {
+    /* Reutiliza o estilo de botão primário */
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+/* Se for usar o botão de limpar */
+form button[type="reset"] {
+    background: #f0f0f0;
+    color: var(--color-neutral-dark);
+    border: 1px solid #ccc;
+} 

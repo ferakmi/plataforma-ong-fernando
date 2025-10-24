@@ -1,0 +1,117 @@
+/* ---------------------------------------------------- */
+/* 02-LAYOUT / _layout.css - GRID, FLEXBOX E RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* ================================================= */
+/* 1. LAYOUT PRINCIPAL (USANDO CSS GRID) */
+/* ================================================= */
+
+/* Definição do GRID para a estrutura geral da página */
+body {
+    display: grid;
+    /* Define as áreas: Header, Main (Conteúdo), Footer */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    /* Min-height 100vh para garantir que o rodapé fique embaixo */
+    min-height: 100vh;
+}
+
+header { grid-area: header; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+/* Container para limitar a largura do conteúdo (Centraliza o conteúdo) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza */
+    padding: 0 var(--spacing-sm); /* Padding nas laterais */
+}
+
+/* ================================================= */
+/* 2. SISTEMA DE GRID CUSTOMIZADO (12 COLUNAS) */
+/* Usado para dispor conteúdo em linhas e colunas dentro do MAIN */
+/* ================================================= */
+
+.grid-12-cols {
+    display: grid;
+    /* 12 colunas de tamanho igual com um gap (espaçamento) entre elas */
+    grid-template-columns: repeat(12, 1fr); 
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+}
+
+/* Elementos de conteúdo (Sections/Articles) */
+section, article {
+    margin-bottom: var(--spacing-xxl);
+}
+
+/* Exemplo de uso: Seção de contato na página inicial em 2 colunas */
+#contato {
+    display: flex; /* Usando Flexbox para o alinhamento de itens */
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+}
+
+/* ================================================= */
+/* 3. BREAKPOINTS RESPONSIVOS (MÍNIMO DE 5) */
+/* Abordagem Mobile First: Estilos primários para telas pequenas, depois aumentamos. */
+/* ================================================= */
+
+/* Small devices (Móveis horizontais, 576px) */
+@media (min-width: 576px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Medium devices (Tablets, 768px) */
+@media (min-width: 768px) {
+    /* Ajusta a hierarquia de títulos para telas maiores */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    
+    /* Volta a seção de contato para colunas no tablet */
+    #contato {
+        flex-direction: row; 
+    }
+}
+
+/* Large devices (Desktops, 992px) */
+@media (min-width: 992px) {
+    /* Layout do Header para Desktop (Usando Flexbox) */
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+    
+    header nav ul {
+        display: flex; /* Transforma a lista de navegação em linha */
+        gap: var(--spacing-md);
+    }
+
+    /* O grid-12-cols começa a mostrar 3 colunas de conteúdo, por exemplo */
+    .grid-12-cols > * {
+        /* Exemplo: Itens ocupando 4 colunas (3 por linha) */
+        grid-column: span 4;
+    }
+}
+
+/* Extra large devices (Grandes Desktops, 1200px) */
+@media (min-width: 1200px) {
+    h1 { font-size: var(--font-size-h1); } /* Volta ao tamanho inicial */
+    h2 { font-size: var(--font-size-h2); }
+    
+    /* O grid-12-cols agora mostra itens ocupando 3 colunas (4 por linha) */
+    .grid-12-cols > * {
+        grid-column: span 3;
+    }
+}
+
+/* Ultra large devices (1400px) */
+@media (min-width: 1400px) {
+    /* Ajustes mínimos para telas super largas */
+}

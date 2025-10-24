@@ -1,0 +1,45 @@
+/* ---------------------------------------------------- */
+/* 03-COMPONENTS / _cards.css - CARDS RESPONSIVOS */
+/* ---------------------------------------------------- */
+
+.card-container {
+    display: flex; /* Usa Flexbox para os cards */
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--color-neutral-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que a imagem respeite o border-radius */
+    max-width: 350px; /* Largura máxima para um visual limpo */
+    flex: 1 1 300px; /* Permite que o card cresça/diminua e ocupe pelo menos 300px */
+    transition: box-shadow var(--transition-speed);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+}
+
+.card-content {
+    padding: var(--spacing-md);
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--color-primary-dark);
+}
+
+.card-content a {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+}

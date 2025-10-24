@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Voluntário | Projeto Mizu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1><a href="index.html">Projeto Mizu</a></h1>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos Sociais</a></li>
+                    <li><a href="cadastro.html">Seja Voluntário</a></li>
+                    <li><a href="#" class="btn btn-primary">Faça uma Doação</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="form-cadastro">
+            <h2>Junte-se ao Time de Voluntários!</h2>
+            <p>Preencha o formulário abaixo para iniciar seu cadastro. Seus dados estarão seguros.</p>
+            
+            <form action="#" method="POST"> 
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+
+                    <p>
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required minlength="5">
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    </p>
+                    
+                    <p>
+                        <label for="cpf">CPF (apenas números):</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" 
+                                pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" 
+                                title="Formato exigido: 000.000.000-00" 
+                                required>
+                    </p>
+
+                    <p>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" 
+                                pattern="^\(\d{2}\) \d{4,5}-\d{4}$" 
+                                title="Formato exigido: (99) 99999-9999 ou (99) 9999-9999" 
+                                required>
+                    </p>
+
+                    <p>
+                        <label for="data_nascimento">Data de Nascimento:</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required>
+                    </p>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço Completo</legend>
+
+                    <p>
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" placeholder="00000-000" 
+                                pattern="^\d{5}-\d{3}$" 
+                                title="Formato exigido: 00000-000" 
+                                required>
+                    </p>
+                    
+                    <p>
+                        <label for="endereco">Rua/Avenida:</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua ou Avenida" required>
+                    </p>
+                    
+                    <p>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </p>
+                    
+                    <p>
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="" disabled selected>Selecione um Estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+                    <button type="reset" class="btn">Limpar Dados</button>
+                </p>
+                
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Projeto Mizu. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Fernando Akira.</p>
+        </div>
+    </footer>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

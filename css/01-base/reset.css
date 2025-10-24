@@ -1,0 +1,32 @@
+/* ---------------------------------------------------- */
+/* 01-BASE / _reset.css - NORMALIZAÇÃO BÁSICA */
+/* ---------------------------------------------------- */
+
+/* Reset Básico (Remove margens e padding padrão) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho do elemento */
+}
+
+/* Reset de Lista (Remove bolinhas de UL) */
+ul {
+    list-style: none;
+}
+
+/* Reset de Links */
+a {
+    text-decoration: none; /* Remove sublinhado */
+    color: var(--color-primary-dark);
+}
+
+a:hover {
+    color: var(--color-primary-base);
+}
+
+/* Reset de Imagens para responsividade */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove o espaço fantasma abaixo de imagens inline */
+}

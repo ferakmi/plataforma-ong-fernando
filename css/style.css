@@ -1,0 +1,18 @@
+/*
+ * Arquivo principal de estilos
+ * Módulos importados para organização e escalabilidade (Estrutura Modular de CSS)
+ */
+
+/* 01-BASE: Variáveis, Reset e Configurações Globais */
+@import url('01-base/reset.css');
+@import url('01-base/variables.css');
+
+/* 02-LAYOUT: Estrutura Geral da Página e Responsividade */
+@import url('02-layout/layout.css');
+
+/* 03-COMPONENTS: Componentes de UI */
+@import url('03-components/navigation.css');
+@import url('03-components/buttons.css');
+@import url('03-components/cards.css');
+@import url('03-components/forms.css');
+/* Adicione mais componentes (alerts, tags, etc.) conforme for desenvolvendo */

@@ -1,0 +1,73 @@
+/* ---------------------------------------------------- */
+/* 01-BASE / _variables.css - SISTEMA DE DESIGN */
+/* ---------------------------------------------------- */
+
+:root {
+    /* ================================================= */
+    /* PALETA DE CORES (Mínimo de 8 cores) */
+    /* ================================================= */
+    /* PRIMÁRIAS (Azul da água - Mizu) */
+    --color-primary-dark: #004c99; /* Azul Marinho Escuro */
+    --color-primary-base: #007bff; /* Azul Base (Clássico) */
+    --color-primary-light: #66b3ff; /* Azul Claro Suave */
+    
+    /* SECUNDÁRIAS (Verde da esperança/natureza) */
+    --color-secondary-base: #28a745; /* Verde Esmeralda */
+    --color-secondary-dark: #1e7e34; /* Verde Mais Escuro (Hover) */
+
+    /* NEUTRAS */
+    --color-neutral-dark: #343a40; /* Texto / Fundo Escuro */
+    --color-neutral-light: #f8f9fa; /* Fundo Leve */
+    --color-neutral-white: #ffffff; /* Fundo Principal / Elementos */
+    
+    /* FEEDBACK (Alerta / Erro) */
+    --color-feedback-error: #dc3545; /* Vermelho */
+    --color-feedback-success: #28a745; /* (Repetição do Secundário) */
+    --color-feedback-info: #17a2b8; /* Azul claro para info */
+
+    
+    /* ================================================= */
+    /* TIPOGRAFIA (Mínimo de 5 tamanhos) */
+    /* ================================================= */
+    --font-family-primary: 'Arial', sans-serif;
+    --font-family-secondary: 'Verdana', sans-serif; /* Exemplo de fonte alternativa */
+
+    --font-size-h1: 3.5rem;   /* 56px */
+    --font-size-h2: 2.5rem;   /* 40px */
+    --font-size-h3: 1.75rem;  /* 28px */
+    --font-size-base: 1rem;   /* 16px (Tamanho base do corpo) */
+    --font-size-small: 0.875rem; /* 14px */
+    
+    --font-weight-bold: 700;
+    --font-weight-regular: 400;
+
+
+    /* ================================================= */
+    /* ESPAÇAMENTO MODULAR (Base 8px) */
+    /* ================================================= */
+    --spacing-xs: 8px;     /* 1x */
+    --spacing-sm: 16px;    /* 2x */
+    --spacing-md: 24px;    /* 3x */
+    --spacing-lg: 32px;    /* 4x */
+    --spacing-xl: 48px;    /* 6x */
+    --spacing-xxl: 64px;   /* 8x */
+    
+    /* OUTROS UTENSÍLIOS */
+    --border-radius: 4px;
+    --transition-speed: 0.3s;
+}
+
+/* Aplicação Global da Fonte Base */
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6; /* Boa prática de acessibilidade */
+    color: var(--color-neutral-dark);
+    background-color: var(--color-neutral-light);
+}
+
+/* Hierarquia de Títulos */
+h1 { font-size: var(--font-size-h1); margin-bottom: var(--spacing-md); }
+h2 { font-size: var(--font-size-h2); margin-bottom: var(--spacing-md); }
+h3 { font-size: var(--font-size-h3); margin-bottom: var(--spacing-sm); }
+/* ... (outros títulos e elementos de texto podem ser adicionados aqui) ... */

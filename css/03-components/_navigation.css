@@ -1,0 +1,79 @@
+/* ---------------------------------------------------- */
+/* 03-COMPONENTS / navigation.css - MENU E NAVEGAÇÃO */
+/* ---------------------------------------------------- */
+
+header {
+    background-color: var(--color-neutral-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Menu fixo no topo ao rolar */
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    /* Garante que o header use o container para centralizar o nav */
+    padding: 0;
+}
+
+header nav {
+    /* No desktop (a partir de 992px), o layout será Flexbox (definido em _layout.css) */
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav h1 {
+    font-size: var(--font-size-h3);
+    color: var(--color-primary-dark);
+    margin: 0; /* Remove margem padrão do h1 */
+}
+
+    header nav ul li {
+        padding: var(--spacing-xs) 0;
+    }
+
+    header nav ul li a {
+        display: block; /* Faz o link ocupar toda a largura do menu */
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 1.1rem;
+    }
+
+    /* ESTADO ABERTO: Exibe a lista quando o JS adiciona a classe 'menu-open' ao HEADER */
+    header.menu-open nav ul {
+        display: flex; 
+    }
+}
+
+
+/* ----------------- NAVEGAÇÃO DESKTOP (Regras a partir de 992px) ----------------- */
+@media (min-width: 992px) {
+    
+    /* Configuração do Header no Desktop (Flexbox em linha) */
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) 0; /* Sem padding lateral pois o .container já tem */
+    }
+    
+    header nav ul {
+        display: flex; /* Exibe a lista em linha no desktop */
+        gap: var(--spacing-md);
+        /* Garante que o menu flutuante não interfira */
+        position: static; 
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Oculta o botão hambúrguer no desktop */
+    .menu-hamburguer-btn {
+        display: none; 
+    }
+
+    /* Estilos específicos para os itens da lista no desktop */
+    header nav ul li a {
+        padding: 0; /* Remove padding desnecessário */
+    }
+}
